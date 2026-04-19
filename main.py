@@ -33,7 +33,7 @@ if __name__ == "__main__":
     else:
         print("Se debe indicar el fichero como primer argumento")
         print("El segundo argumento indica si se quieren eliminar duplicados")
-        print("El tercer argumento indica el orden: asc o desc")
+        print("El tercer argumento (asc/desc) indica el orden")
         sys.exit(1)
 
     print(f"Se leerán las palabras del fichero {filename}")
