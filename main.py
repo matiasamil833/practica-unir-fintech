@@ -8,7 +8,7 @@ import sys
 
 DEFAULT_FILENAME = "words.txt"
 DEFAULT_DUPLICATES = False
-
+DEFAULT_ORDER = True
 
 def sort_list(items, ascending=True):
     if not isinstance(items, list):
@@ -24,12 +24,16 @@ def remove_duplicates_from_list(items):
 if __name__ == "__main__":
     filename = DEFAULT_FILENAME
     remove_duplicates = DEFAULT_DUPLICATES
-    if len(sys.argv) == 3:
+    order = DEFAULT_ORDER
+    if len(sys.argv) >= 3:
         filename = sys.argv[1]
         remove_duplicates = sys.argv[2].lower() == "yes"
+        if len(sys.argv) >= 4:
+            order = sys.argv[3].lower() != "desc"
     else:
         print("You must specify the file as the first argument")
         print("The second argument indicates whether to remove duplicates")
+        print("The third argument (asc/desc) indicates the order.")
         sys.exit(1)
 
     print(f"Words will be read from the file {filename}")
@@ -46,4 +50,4 @@ if __name__ == "__main__":
     if remove_duplicates:
         word_list = remove_duplicates_from_list(word_list)
 
-    print(sort_list(word_list))
+    print(sort_list(word_list, ascending=order))
