@@ -31,12 +31,12 @@ if __name__ == "__main__":
         if len(sys.argv) >= 4:
             order = sys.argv[3].lower() != "desc"
     else:
-        print("Se debe indicar el fichero como primer argumento")
-        print("El segundo argumento indica si se quieren eliminar duplicados")
-        print("El tercer argumento (asc/desc) indica el orden")
+        print("You must specify the file as the first argument")
+        print("The second argument indicates whether to remove duplicates")
+        print("The third argument (asc/desc) indicates the order.")
         sys.exit(1)
 
-    print(f"Se leerán las palabras del fichero {filename}")
+    print(f"Words will be read from the file {filename}")
     file_path = os.path.join(".", filename)
     if os.path.isfile(file_path):
         word_list = []
@@ -44,7 +44,7 @@ if __name__ == "__main__":
             for line in file:
                 word_list.append(line.strip())
     else:
-        print(f"El fichero {filename} no existe")
+        print(f"File {filename} does not exist")
         word_list = ["ravenclaw", "gryffindor", "slytherin", "hufflepuff"]
 
     if remove_duplicates:

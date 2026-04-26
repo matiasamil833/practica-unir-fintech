@@ -1,0 +1,10 @@
+pera
+manzana
+cereza
+naranja
+banana
+kiwi
+uva
+melocoton
+limon
+fresa
